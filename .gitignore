@@ -22,3 +22,34 @@ Thumbs.db
 
 dist/
 out/
+
+# --- added by RAf sync 2026-10-04 ---
+node_modules/
+build/
+.next/
+.expo/
+target/
+.turbo/
+coverage/
+.env.*
+!.env.example
+!.env.sample
+!.env.template
+venv/
+.venv/
+__pycache__/
+*.pyc
+test-ledger/
+.anchor/
+.cache/
+.parcel-cache/
+.vercel/
+*.tsbuildinfo
+.pnpm-store/
+.gradle/
+*.pem
+id.json
+*keypair*.json
+12word*
+*mnemonic*
+.claude/settings.local.json

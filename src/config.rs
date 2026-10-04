@@ -35,13 +35,13 @@ pub struct Config {
 
 impl Config {
     pub fn from_env() -> Result<Self> {
-        // ── DEX data: Monad TESTNET ────────────────────────────────────────
+        // ── DEX data: Monad MAINNET ────────────────────────────────────────
         let monad_rpc_url = env::var("MONAD_RPC_URL")
-            .unwrap_or_else(|_| "https://testnet-rpc.monad.xyz".to_string());
+            .unwrap_or_else(|_| "https://rpc.monad.xyz".to_string());
 
-        // Kuru testnet MON-USDC CLOB (MONAD_DEX_REFERENCE §2.1)
+        // Kuru mainnet MON-USDC CLOB
         let kuru_pool_mon_usdc = env::var("KURU_POOL_MON_USDC")
-            .unwrap_or_else(|_| "0xd8336cb07d4be511ccaf06b799851e1a80f98c71".to_string());
+            .unwrap_or_else(|_| "0x065C9d28E428A0db40191a54d33d5b7c71a9C394".to_string());
 
         let kuru_fee_pct = env::var("KURU_FEE_PCT")
             .ok()
@@ -62,9 +62,9 @@ impl Config {
             env::var("EXTRA_UV3_POOLS").unwrap_or_default().as_str(),
         );
 
-        // UV3 testnet factory (MONAD_DEX_REFERENCE §1.3)
+        // UV3 mainnet factory
         let uniswap_v3_factory = env::var("UNISWAP_V3_FACTORY")
-            .unwrap_or_else(|_| "0x961235a9020b05c44df1026d956d1f4d78014276".to_string());
+            .unwrap_or_else(|_| "0x204faca1764b154221e35c0d20abb3c525710498".to_string());
 
         let uniswap_v3_pool_mon_usdc = env::var("UNISWAP_V3_POOL_MON_USDC").ok();
 
